@@ -8,7 +8,7 @@ export class ImportantDocuments extends React.Component<ImportantDocumentProps, 
         {this.createLinksToImportantDocuments(this.props.importantDocuments)}</div>;
     }
 
-    createLinksToImportantDocuments(importantDocuments: ImportantDocument[]) {
-      return importantDocuments.map(i => <span><a href={i.url}>{i.name}</a> | </span>)
+    createLinksToImportantDocuments(importantDocuments: ImportantDocument[]): React.ReactElement<HTMLSpanElement>[] {
+      return importantDocuments.map(i => <span key={i.name}><a target="_blank" href={i.url}>{i.name}</a> | </span>)
     }
 }
