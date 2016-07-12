@@ -23,7 +23,15 @@ module.exports = {
     module: {
         loaders: [
             // All files with a '.ts' or '.tsx' extension will be handled by 'ts-loader'.
-            { test: /\.tsx?$/, loaders: ["react-hot" , "ts"] }
+            { 
+                test: /\.ts(x?)$/,
+                exclude: /node_modules/,
+                loaders: ["react-hot" , "awesome-typescript"] 
+            },
+            {
+                test: /\.json$/,
+                loader: 'json'
+            }
         ],
 
         preLoaders: [
